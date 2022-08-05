@@ -24,11 +24,9 @@ jobs:
         with:
           ref: 
           fetch-depth: 0
-      
+      - run: echo git log
       - run: cat README.md
       - run: echo ${{ github.event.head_commit.message }}
-      - name: get file changes
-        run: | 
-          git diff --name-only ${{ github.event.before }} ${{ github.event.after }}
+      - run: echo "${{toJSON(github.event.commits)}}"
       - name: Send greeting
         run: 'echo "payload:  ${{ github.event.client_payload.test }}"'
