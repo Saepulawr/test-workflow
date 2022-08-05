@@ -1,11 +1,11 @@
 name: Mixed inputs
 
 on:
-  workflow_dispatch:
+  repository_dispatch:
     inputs:
       message:
         required: true
-      
+
 jobs:
   greet:
     runs-on: ubuntu-latest
