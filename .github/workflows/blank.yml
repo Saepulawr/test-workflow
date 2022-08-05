@@ -25,6 +25,7 @@ jobs:
           ref: 
       
       - run: cat README.md
-
+      - run: echo ${{ github.event.head_commit.message }}
+      
       - name: Send greeting
         run: 'echo "payload:  ${{ github.event.client_payload.test }}"'
