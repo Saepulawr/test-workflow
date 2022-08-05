@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: 
+          ref: test
           fetch-depth: 0
       - run: git log -10 --pretty=format:'%h - %an - %s' 
       - run: cat README.md
