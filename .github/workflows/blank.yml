@@ -16,4 +16,4 @@ jobs:
 
     steps:
     - name: Send greeting
-      run: 'echo "payload: ${{ github.event.client_payload }}"'
+      run: 'echo "payload:  ${{ github.event.client_payload.test }}"'
