@@ -1,4 +1,4 @@
-name: Mixed inputs
+name: Build
 
 on:
   workflow_dispatch:
@@ -11,9 +11,15 @@ on:
       name:
 
 jobs:
-  greet:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Send greeting
-      run: 'echo "payload:  ${{ github.event.client_payload.test }}"'
+      - uses: actions/checkout@v3
+        with:
+          ref: test
+      
+      - run: cat README.md
+      
+      - name: Send greeting
+        run: 'echo "payload:  ${{ github.event.client_payload.test }}"'
