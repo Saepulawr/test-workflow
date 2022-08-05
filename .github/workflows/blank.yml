@@ -1,10 +1,12 @@
 name: Mixed inputs
 
 on:
+  workflow_dispatch:
+
+  # Allows external webhook trigger
   repository_dispatch:
-    inputs:
-      message:
-        required: true
+    types:
+      - webhook
 
 jobs:
   greet:
